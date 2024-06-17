@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {}
+
+.area {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  /* background: linear-gradient(180deg,orange 5%,cyan 100%); */
+  background: linear-gradient(60deg, #94FFD8 20%, #FF76CE 80%);
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.box li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.6);
+  animation: animate 20s linear infinite;
+  bottom: -150px;
+  box-shadow: 0px 10px 30px rgb(0 0 0 / 30%);
+}
+
+
+.box li:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  left: 86%;
+  animation-delay: 0s;
+}
+
+.box li:nth-child(2) {
+  width: 30px;
+  height: 30px;
+  left: 12%;
+  animation-delay: 1.2s;
+  animation-duration: 10s;
+}
+
+.box li:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  left: 70%;
+  animation-delay: 5.5s;
+  /* animation-duration: 10s; */
+}
+
+.box li:nth-child(4) {
+  width: 150px;
+  height: 150px;
+  left: 42%;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+
+.box li:nth-child(5) {
+  width: 40px;
+  height: 40px;
+  left: 65%;
+  animation-delay: 0s;
+  /* animation-duration: 15s; */
+}
+
+.box li:nth-child(6) {
+  width: 110px;
+  height: 110px;
+  left: 15%;
+  animation-delay: 3.5s;
+  /* animation-duration: 15s; */
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-800px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+.log-avg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+
+}
+
+.log-avg2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.log-avg3 {
+  height: 25vh;
+}
+
+
+
+.container_div_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Opcional: para centrar verticalmente dentro de toda la ventana */
+  gap: 69px;
+  padding: 10px;
+}
+
+.container_div_img img {
+  width: 180px;
+  /* Ajusta el tamaño deseado */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  padding: 10px;
+
+  transition: box-shadow 0.3s ease-in-out;
+
+}
+
+.container_div_img img:hover {
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8); /* Efecto de resplandor */
+}
+
+
+.container_form {
+  padding: 10px;
+}
