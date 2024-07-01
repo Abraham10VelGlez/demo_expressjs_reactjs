@@ -1,9 +1,10 @@
-html,body {
+html,
+body {
     display: table;
     width: 100%;
     height: 100%;
     border-color: #17fb17;
-    position: relative;    
+    position: relative;
     /*overflow-y: auto; Asegura que el desplazamiento vertical esté habilitado */
 }
 
@@ -39,7 +40,8 @@ html,body {
     z-index: 6;
     background: #939c9b;
     width: -moz-available;
-    overflow-y: auto; /* Asegura que el desplazamiento vertical esté habilitado */
+    overflow-y: auto;
+    /* Asegura que el desplazamiento vertical esté habilitado */
 }
 
 
@@ -57,7 +59,8 @@ html,body {
 .containerxeath {
     width: 24em;
     height: 24em;
-    position: relative; /* static */
+    position: relative;
+    /* static */
     background: #0588e4 url(./bg.png);
     background-size: cover;
     box-shadow: inset 0 0 3em;
@@ -65,9 +68,10 @@ html,body {
     transition: all .5s ease;
     animation: earth 60s linear infinite;
     z-index: 2;
-    top: 25em; /* Ajusta este valor según tus necesidades margin-top: ; */
-    
-    
+    top: 25em;
+    /* Ajusta este valor según tus necesidades margin-top: ; */
+
+
 }
 
 
@@ -228,3 +232,12 @@ html,body {
     z-index: 3;
     position: relative;
 }
+
+
+/*CHAKRAUI SET CODE*/
+.ajust {
+    overflow-y: auto;
+    /*Asegura que el desplazamiento vertical esté habilitado */
+}
+
+/*CHAKRAUI SET CODE*/

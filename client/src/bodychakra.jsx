@@ -35,18 +35,6 @@ import {
     UnorderedList,
 } from '@chakra-ui/react'
 import {
-    Table,
-    Thead,
-    Tbody,
-    Tfoot,
-    Tr,
-    Th,
-    Td,
-    TableCaption,
-    TableContainer,
-} from '@chakra-ui/react'
-
-import {
     AlertDialog,
     AlertDialogBody,
     AlertDialogFooter,
@@ -57,6 +45,9 @@ import {
 } from '@chakra-ui/react'
 import { useToast } from '@chakra-ui/react'
 import TableChakra from './bodychakratable';
+
+import AccordionChakra from './accordin';
+import ComponentXChakra from './componentx';
 
 
 export default function BodyChakra({ username, userId, useremail }) {
@@ -127,24 +118,7 @@ export default function BodyChakra({ username, userId, useremail }) {
 
 
 
-    const CustomTab = React.forwardRef((props, ref) => {
-        // 1. Reuse the `useTab` hook
-        const tabProps = useTab({ ...props, ref })
-        const isSelected = !!tabProps['aria-selected']
-
-        // 2. Hook into the Tabs `size`, `variant`, props
-        const styles = useMultiStyleConfig('Tabs', tabProps)
-
-        return (
-            <Button __css={styles.tab} {...tabProps}>
-                <Box as='span' mr='3'>
-                    {isSelected ? '👨‍💻' : '🔮'}
-                </Box>
-                {tabProps.children}
-            </Button>
-        )
-    })
-
+    
 
     const Clime_siteweb = () => {
         const { colorMode, toggleColorMode } = useColorMode()
@@ -312,102 +286,28 @@ export default function BodyChakra({ username, userId, useremail }) {
                                 </Alert>
                             </GridItem>
                             <GridItem colSpan={{ base: 1, sm: 1, md: 1 }} bg='darkgray' >
-                                <Tabs>
-                                    <TabList>
-                                        <CustomTab>Componente 1</CustomTab>
-                                        <CustomTab>Componente 2</CustomTab>
-                                        <CustomTab>Componente 3</CustomTab>
-                                    </TabList>
-                                    <TabPanels>
-                                        <TabPanel>
-                                            <Box padding='6' boxShadow='lg' bg='lightblue'>
-                                                <SkeletonCircle size='10' />
-                                                <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
-                                            </Box>
-                                        </TabPanel>
-                                        <TabPanel>
-
-                                            <center>
-                                                <Card textAlign="center" maxW={{ base: '150%', sm: '180px' }}>
-                                                    <CardBody>
-                                                        <Image
-                                                            src='https://ss365.liverpool.com.mx/xl/1155311718.jpg'
-                                                            alt='Green double couch with wooden legs'
-                                                            borderRadius='lg'
-                                                        />
-                                                        <Stack mt='6' spacing='3'>
-                                                            <Heading size='md'>CARD IMAGEN</Heading>
-                                                            <Text>
-                                                                Comandante Narumi
-                                                            </Text>
-                                                            <Text color='blue.600' fontSize='2xl'>
-                                                                $750
-                                                            </Text>
-                                                        </Stack>
-                                                    </CardBody>
-                                                    <Divider />
-                                                    <CardFooter >
-                                                        <center>
-                                                            <Button variant='solid' colorScheme='green'>
-                                                                Buy now
-                                                            </Button>
-                                                        </center>
-                                                    </CardFooter>
-
-                                                </Card>
-                                            </center>
-                                        </TabPanel>
-                                        <TabPanel>
-                                            <center>
-                                                <Card textAlign="center" maxW={{ base: '150%', sm: '180px' }}>
-                                                    <CardBody>
-                                                        <Image
-                                                            src='https://ramenparados.com/wp-content/uploads/2023/08/kaiju-2.jpg'
-                                                            alt='Green double couch with wooden legs'
-                                                            borderRadius='lg'
-                                                        />
-                                                        <Stack mt='6' spacing='3'>
-                                                            <Heading size='md'>CARD IMAGEN</Heading>
-                                                            <Text>
-                                                                Kaiju No. 8
-                                                            </Text>
-                                                            <Text color='blue.600' fontSize='2xl'>
-                                                                $1000
-                                                            </Text>
-                                                        </Stack>
-                                                    </CardBody>
-                                                    <Divider />
-                                                    <CardFooter >
-                                                        <center>
-                                                            <Button variant='solid' colorScheme='green'>
-                                                                Buy now
-                                                            </Button>
-                                                        </center>
-                                                    </CardFooter>
-
-                                                </Card>
-                                            </center>
-                                        </TabPanel>
-
-                                    </TabPanels>
-                                </Tabs>
+                                <ComponentXChakra></ComponentXChakra>
                             </GridItem>
                             <GridItem colSpan={{ base: 1, sm: 1, md: 1 }} bg='darkorchid' >
-                                <TableContainer>
-                                    <TableChakra></TableChakra>
-                                </TableContainer>
+                                <AccordionChakra className="ajust" ></AccordionChakra>
+                                
                             </GridItem>
                             <GridItem colSpan={{ base: 1, sm: 1, md: 1 }} bg='darkkhaki' >
                                 <TransitionExample/>
                                 <ToastStatusExample/>
                             </GridItem>
                             <GridItem colSpan={{ base: 1, sm: 1, md: 1 }} bg='darkgoldenrod' >
-                                asd
+                                Loading CHAKRAUI
                             </GridItem>
+
+                            
 
                         </Grid>
                     </center>
                 </div>
+
+
+                
             </ChakraProvider>
 
 
