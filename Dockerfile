@@ -9,6 +9,9 @@ COPY package*.json ./
 # Instala las dependencias
 RUN yarn install
 
+# Instala nodemon globalmente
+RUN yarn global add nodemon
+
 # Copia el resto del código de la aplicación al contenedor
 COPY . .
 
@@ -16,7 +19,7 @@ COPY . .
 EXPOSE 3000
 
 # Define el comando para ejecutar tu aplicación
-CMD ["node", "server/index.js"]
+CMD ["nodemon", "server/index.js"]
 
 
 #COMANDOS PARA EJECUTAR DOCKERFILE

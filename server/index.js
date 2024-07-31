@@ -47,12 +47,17 @@ app.use('/api', useroutejwt_express);
 
 //INICIO DEL SERVIDOR EXPRESSJS SERVER
 app.get('/', (req, res) => {
-  res.send('activoo EXPRESSJS SERVER')
+  res.send('EXPRESSJS SERVER IN DOCKER AAA')
 })
 
 //entrada de enrutamiento con el servidor de express y aplicacion de react en frontend
-app.get('/api', (req, res) => {
-  res.json({ message: "expressjs activo" });
+app.get('/apii', (req, res) => {
+  res.json({ message: "DOCKER EXPRESSJS SERVER ENABLE" });
+})
+
+//ruta prueba de docker 
+app.get('/docker', (req, res) => {
+  res.json({ message: "DOCKER SERVER AVG " });
 })
 
 
@@ -80,19 +85,34 @@ app.post('/api/login', function (req, res, next) { })
 /// para testear la conexion con la base datos
 // Ruta para realizar una consulta a PostgreSQL
 app.get('/testpostgresql', async (req, res) => {
+  //res.send('POSTGRESQL 16V EDITABLE xx')
   //console.log("conexion");
   //res.json({e:"conexion"});
   const client = new Client({
     user: 'postgres',
-    host: 'localhost',
-    database: 'reactexpressjs',
-    password: '12345',
+    //host: 'localhost',  
+    /* en lugar de usar host debes usar
+    Cuando utilizas Docker Compose,
+     los servicios pueden comunicarse entre sí utilizando 
+     los nombres de los servicios definidos en el 
+     archivo docker-compose.yml. 
+     En tu caso, necesitas asegurarte de que tu aplicación
+      Express.js esté intentando conectarse a 
+      la base de datos PostgreSQL usando 
+      el nombre del servicio ejemplo:  databaseavg.
+    */
+    host: 'dataavg', // nombre del servicio definido en docker-compose.yml
+    database: 'expressjsavg',
+    //password: '12345',
+    password: 'secret',
     port: 5432,
   });
 
   try {
     await client.connect();
-    const result = await client.query('SELECT *  FROM public.users');
+    //const result = await client.query('SELECT *  FROM public.users');
+    const result = await client.query("SELECT ('SERVER POSTGRES 16 ABRAHAM') as message");
+
     res.json(result.rows);
   } catch (error) {
     console.error('Error executing query', error);
@@ -100,6 +120,7 @@ app.get('/testpostgresql', async (req, res) => {
   } finally {
     await client.end();
   }
+
 });
 
 

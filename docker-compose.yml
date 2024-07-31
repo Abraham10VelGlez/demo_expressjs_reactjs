@@ -12,6 +12,9 @@ services:
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
+    command: nodemon server/index.js
+    depends_on:
+      - databaseavg
 
   databaseavg:
     image: postgres:16
