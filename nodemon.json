@@ -3,5 +3,8 @@
         "server"
     ],
     "ext": "js,json",
+    "ignore": [
+        "node_modules"
+    ],
     "exec": "node server/index.js"
 }
