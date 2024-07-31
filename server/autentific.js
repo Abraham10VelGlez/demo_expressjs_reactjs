@@ -113,7 +113,7 @@ router.post('/createavg', async function (req, res, next) {
 
 
 
-        
+
         /*
         ///////////////////////////////////////////////////ESTE EJEMPLO FUNCIONA CORRECTAMENTE SIN EMBARGO NO ME SIRVE DEBIDO A QUE NO PUEDO GENERAR RESPUESTAS PARA EL CLIENTE DE MANERA SIMPLE
 
