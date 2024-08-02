@@ -20,6 +20,7 @@ EXPOSE 3000
 
 # Define el comando para ejecutar tu aplicación
 CMD ["nodemon", "server/index.js"]
+#CMD ["yarn", "start"]
 
 
 #COMANDOS PARA EJECUTAR DOCKERFILE

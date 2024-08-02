@@ -47,17 +47,17 @@ app.use('/api', useroutejwt_express);
 
 //INICIO DEL SERVIDOR EXPRESSJS SERVER
 app.get('/', (req, res) => {
-  res.send('EXPRESSJS SERVER IN DOCKER AAA')
+  res.send(':) =3 :3 =() EXPRESSJS SERVER IN DOCKER')
 })
 
 //entrada de enrutamiento con el servidor de express y aplicacion de react en frontend
 app.get('/apii', (req, res) => {
-  res.json({ message: "DOCKER EXPRESSJS SERVER ENABLE" });
+  res.json({ message: ":) DOCKER EXPRESSJS SERVER ENABLE" });
 })
 
 //ruta prueba de docker 
 app.get('/docker', (req, res) => {
-  res.json({ message: "DOCKER SERVER AVG " });
+  res.json({ message: " :) DOCKER SERVER AVG " });
 })
 
 
@@ -111,7 +111,7 @@ app.get('/testpostgresql', async (req, res) => {
   try {
     await client.connect();
     //const result = await client.query('SELECT *  FROM public.users');
-    const result = await client.query("SELECT ('SERVER POSTGRES 16 ABRAHAM') as message");
+    const result = await client.query("SELECT (' MESSAGE SERVER POSTGRES 16 ABRAHAM') as message");
 
     res.json(result.rows);
   } catch (error) {

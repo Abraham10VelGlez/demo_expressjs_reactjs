@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
+    host: '0.0.0.0',
+    port: 5173,
     proxy: {
       '/api': {
         target: 'http://localhost:3000',
@@ -25,9 +27,11 @@ export default defineConfig({
     //opcional para Controla el reinicio de Vite
     //Puedes intentar aumentar el debounce time para las recargas
     // en tu configuración de Vite
-   /*hmr: {
-      overlay: false,
-      timeout: 3000, // Tiempo en milisegundos antes de intentar reconectar
-    },*/
+    /*hmr: {
+       overlay: false,
+       timeout: 3000, // Tiempo en milisegundos antes de intentar reconectar
+     },*/
   }
+
+
 })

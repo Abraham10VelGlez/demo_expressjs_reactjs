@@ -1,7 +1,20 @@
 version: 'serverexpress1'
 
 services:
-  app:
+  # Aplicación en React
+  client:
+    build:
+      context: .
+      dockerfile: ./client/Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+    command: yarn dev
+    environment:
+      - NODE_ENV=development
+
+  server:
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,9 +23,9 @@ services:
     environment:
       NODE_ENV: development
     volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-    command: nodemon server/index.js
+      - .:/usr/src/server
+      - /usr/src/server/node_modules
+    command: yarn start
     depends_on:
       - databaseavg
 
